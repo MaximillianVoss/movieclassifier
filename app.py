@@ -5,7 +5,7 @@ import dill
 from vectorizer import vect
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='Шаблоны')
 cur_dir = os.path.dirname(__file__)
 clf = dill.load(open(os.path.join(cur_dir, 'pkl_objects', 'classifier.pkl'), 'rb'))
 stop = dill.load(open(os.path.join(cur_dir, 'pkl_objects', 'stopwords.pkl'), 'rb'))
